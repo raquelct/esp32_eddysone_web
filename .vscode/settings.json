@@ -1,0 +1,13 @@
+{
+    "files.associations": {
+        "eddystone_protocol.h": "c",
+        "esp_wifi.h": "c",
+        "freertos.h": "c",
+        "eddystone_api.h": "c",
+        "array": "c",
+        "string_view": "c",
+        "initializer_list": "c",
+        "utility": "c",
+        "esp_gattc_api.h": "c"
+    }
+}

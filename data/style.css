@@ -1,0 +1,25 @@
+html {
+    font-family: Helvetica;
+    display: inline-block;
+    margin: 0px auto;
+  }
+  h1{
+    text-align: center;
+    color: #0F3376;
+    padding: 2vh;
+    font-size: 1.5rem;
+  }
+  p{
+    color: white;
+    font-size: 1rem;
+  }
+  div{
+    text-align: left;
+    padding: 20px;
+    background: blue;
+    box-sizing: border-box;
+    box-shadow: 2px 2px 10px 2px #888888;
+    border-radius: 25px;
+    width: 100%;
+    float: left;
+  }
