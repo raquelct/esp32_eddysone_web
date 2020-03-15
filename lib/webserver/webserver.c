@@ -155,11 +155,13 @@ static void esp_webserver_netconn_serve(struct netconn *conn)
         html_file = esp_spiffs_read_file("/spiffs/index.html");
 
         if (eddy_common_received) {
+            html_file = esp_webserver_format_html(html_file, MAC_PLACEHOLDER, &eddy_mac);
             html_file = esp_webserver_format_html(html_file, NAME_PLACEHOLDER, &eddy_namespace_id);
-            html_file = esp_webserver_format_html(html_file, MAC_PLACEHOLDER, &eddy_instance_id);
+            html_file = esp_webserver_format_html(html_file, INSTANCE_PLACEHOLDER, &eddy_instance_id);
         } else {
-            html_file = esp_webserver_format_html(html_file, NAME_PLACEHOLDER, "NOT FOUND");
             html_file = esp_webserver_format_html(html_file, MAC_PLACEHOLDER, "NOT FOUND");
+            html_file = esp_webserver_format_html(html_file, NAME_PLACEHOLDER, "NOT FOUND");
+            html_file = esp_webserver_format_html(html_file, INSTANCE_PLACEHOLDER, "NOT FOUND");
         }
         
         if (eddy_url_received) {

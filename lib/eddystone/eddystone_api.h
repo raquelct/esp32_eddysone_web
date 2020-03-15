@@ -109,8 +109,9 @@ static const char* eddystone_url_encoding[14] = {
 uint8_t eddy_common_received;       /* flag to common eddystone frame received */
 uint8_t eddy_url_received;          /* flag to url eddystone frame received */
 uint8_t eddy_tlm_received;          /* flag to tlm eddystone frame received */
+char eddy_mac[MAX_STRING_SIZE];                  /* device uuid mac */
 char eddy_namespace_id[MAX_STRING_SIZE];         /* device uuid name */
-char eddy_instance_id[MAX_STRING_SIZE];          /* device uuid mac */
+char eddy_instance_id[MAX_STRING_SIZE];          /* device uuid instance */
 char eddy_tx_power[MAX_STRING_SIZE];             /* calibrated Tx power at 0m */
 char eddy_url[MAX_STRING_SIZE];                  /* the decoded URL */
 char eddy_tlm_version[MAX_STRING_SIZE];          /* TLM version,0x00 for now */

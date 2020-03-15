@@ -35,6 +35,7 @@
 /* HTML placeholders defines */
 #define NAME_PLACEHOLDER "%NAME%"
 #define MAC_PLACEHOLDER "%MAC%"
+#define INSTANCE_PLACEHOLDER "%INSTANCE%"
 #define RSSI_PLACEHOLDER "%RSSI%"
 #define VER_PLACEHOLDER "%VER%"
 #define URL_PLACEHOLDER "%URL%"

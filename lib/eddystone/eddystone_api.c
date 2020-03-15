@@ -351,8 +351,12 @@ static void esp_gap_cb(esp_gap_ble_cb_event_t event, esp_ble_gap_cb_param_t* par
                         // The received adv data is a correct eddystone frame packet.
                         // Here, we get the eddystone infomation in eddystone_res, we can use the data in res to do other things.
                         // For example, just print them:
+                        sprintf(eddy_mac, "%02X:%02X:%02X:%02X:%02X:%02X", 
+                        (uint8_t)scan_result->scan_rst.bda[0], (uint8_t)scan_result->scan_rst.bda[1], (uint8_t)scan_result->scan_rst.bda[2],
+                        (uint8_t)scan_result->scan_rst.bda[3], (uint8_t)scan_result->scan_rst.bda[4], (uint8_t)scan_result->scan_rst.bda[5]);
+
                         ESP_LOGI(EDDY_TAG, "--------Eddystone Found----------");
-                        esp_log_buffer_hex("Device address:", scan_result->scan_rst.bda, ESP_BD_ADDR_LEN);
+                        ESP_LOGI(EDDY_TAG,"Device address: %s", eddy_mac);
                         ESP_LOGI(EDDY_TAG, "RSSI of packet:%d dbm", scan_result->scan_rst.rssi);
                         esp_eddystone_show_inform(&eddystone_res);
                     }
